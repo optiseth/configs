@@ -526,12 +526,12 @@ xsource "/etc/sysconfig/keyboard"
 TZ=$(xcat /etc/timezone)
 
 # set some variables
-#if check_com -c vim ; then
+if check_com -c vim ; then
 #v#
-#    export EDITOR=${EDITOR:-vim}
-#else
-#    export EDITOR=${EDITOR:-vi}
-#fi
+    export EDITOR=${EDITOR:-vim}
+else
+    export EDITOR=${EDITOR:-vi}
+fi
 
 #v#
 export PAGER=${PAGER:-less}
@@ -3304,8 +3304,6 @@ fi
 
 zrclocal
 
-## genrefcard.pl settings
-
 ## Personal additional settings
 
 # default editor
@@ -3324,6 +3322,8 @@ alias gen-mkinitcpio='sudo mkinitcpio -p linux && sudo mkinitcpio -p linux-lts' 
 
 # Add sudo in front of updatedb
 alias updatedb='sudo updatedb'
+
+## genrefcard.pl settings
 
 ### doc strings for external functions from files
 #m# f5 grml-wallpaper() Sets a wallpaper (try completion for possible values)
